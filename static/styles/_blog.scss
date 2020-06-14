@@ -1,0 +1,115 @@
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin: auto;
+}
+
+.post-card {
+  display: flex;
+  flex: 1 1 300px;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 300px;
+  overflow: hidden;
+  margin: 0 20px 40px;
+  background: #fff 50%;
+  background-size: cover;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.08),
+    0 0.5rem 0.75rem rgba(0, 0, 0, 0.14);
+  transition: all 0.2s ease;
+  &:hover {
+    box-shadow: 0 40px 45px rgba(0, 0, 0, 0.1);
+    transform: scale(1.04);
+  }
+
+  @media (min-width: 1024px) {
+    &.full-card {
+      flex: 1 1 100%;
+      flex-direction: row;
+      .image-container {
+        flex: 1 1 auto;
+        img {
+          border-radius: 5px 0 0 5px;
+        }
+      }
+      .content-main {
+        flex: 0 1 600px;
+      }
+    }
+  }
+
+  .image-container {
+    margin: auto;
+    position: relative;
+    min-height: 200px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      border-top-left-radius: 0.4rem;
+      border-top-right-radius: 0.4rem;
+    }
+    a {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: "0.4rem";
+      > div {
+        position: static !important;
+      }
+      > div > div {
+        position: static !important;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 5px "#284187";
+      }
+    }
+    flex-basis: 100%;
+    max-width: 100%;
+    width: 100%;
+    @media (max-width: 800px) {
+      flex-basis: 100%;
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 500px) {
+      min-height: 200px;
+    }
+  }
+  .content-container {
+    padding: 25px 25px 0;
+    .tag-container {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      display: inline-block;
+      margin: 0 0 20px;
+      font-family: Inter;
+    }
+    p {
+      color: #a0a6ad;
+      line-height: 24px;
+      font-size: 16px;
+      margin: 0 0 1.5em;
+    }
+    @media (max-width: 800px) {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+  .post-card-footer {
+    padding: 0 25px 25px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #3c484e;
+  }
+}
